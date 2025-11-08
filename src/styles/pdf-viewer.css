@@ -1,0 +1,36 @@
+.pdf-viewer {
+  /* min-height: 100vh; */
+  background: #f5f5f5;
+}
+
+.viewer-container {
+  display: grid;
+  grid-template-columns: 1fr 550px;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.pdf-section {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.annotation-section {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  max-height: 85vh;
+}
+
+@media (max-width: 768px) {
+  .viewer-container {
+    grid-template-columns: 1fr;
+  }
+
+  .annotation-section {
+    max-height: 400px;
+  }
+}
