@@ -116,23 +116,4 @@ frontend/
 
 ## Troubleshooting & notes
 
-- If Tailwind styles are not appearing:
-
-  - confirm `@tailwind` directives exist in the CSS file imported by `src/index.jsx` (this project imports `src/styles/index.css`).
-  - confirm PostCSS and Tailwind dependencies are installed and configured.
-  - confirm `tailwind.config.js` `content` paths include `./public/index.html` and `./src/**/*`.
-
-- If you decide to switch from CRA -> Vite, update `package.json` scripts and install Vite plugins, then test the app. Keep a backup of the old scripts.
-
-## How to contribute
-
-- Use the controller -> service separation for backend changes.
-- Keep UI logic in components and keep API calls inside `services/api.js`.
-
----
-
-If you'd like, I can:
-
-- Apply Swagger annotations automatically to all backend route files.
-- Update `package.json` to use Vite consistently and add a `dev` script.
-- Add a small CONTRIBUTING.md with contribution steps.
+Deployment link --> https://pdfinity.xyz/
