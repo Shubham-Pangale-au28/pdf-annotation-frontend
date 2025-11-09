@@ -114,6 +114,5 @@ frontend/
 - Replies are added by POSTing `{ content }` to `/api/annotations/:id/reply`.
 - The frontend expects the backend to return populated annotation objects (with `user` and `replies.user` populated) so it can render names and avatars.
 
-## Troubleshooting & notes
-
-Deployment link --> https://pdfinity.xyz/
+## Deployment Link
+ https://pdfinity.xyz/
