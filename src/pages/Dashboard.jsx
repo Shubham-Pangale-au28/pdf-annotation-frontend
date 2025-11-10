@@ -41,14 +41,14 @@ function Dashboard() {
       <Navbar />
 
       <main className="flex-1 mx-auto px-6 w-full bg-gradient-to-br from-gray-100 to-blue-200">
-        <div className="dashboard-main">
+        <div className="dashboard-main flex xs:flex-column md:flex-row">
           <div className="left-column">
             <div className="left-pane-header">
               <h2>📚 Documents</h2>
               <p className="muted">Manage and view uploaded PDFs</p>
             </div>
 
-            <div className="left-pane-content max-h-[62vh]">
+            <div className="left-pane-content xs:max-h-[40vh] sm:max-h-[62vh]">
               {error && <div className="alert error">{error}</div>}
 
               {loading ? (
@@ -63,7 +63,7 @@ function Dashboard() {
           </div>
           {user && user.role == "admin" && (
             <div className="right-column">
-              <div className="right-card-wrapper">
+              <div className="right-card-wrapper text-center">
                 <DocumentUpload onUpload={handleUpload} />
               </div>
             </div>

@@ -17,9 +17,7 @@
     "start": "react-scripts start",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "build": "react-scripts build"
   },
   "eslintConfig": {
     "extends": [
@@ -39,10 +37,8 @@
     ]
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^5.1.0",
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.6",
-    "react-scripts": "5.0.1",
-    "vite": "^7.2.2"
+    "react-scripts": "5.0.1"
   }
 }

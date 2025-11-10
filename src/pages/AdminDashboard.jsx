@@ -91,36 +91,38 @@ function AdminDashboard() {
             {loading ? (
               <div className="p-6 text-center text-gray-500">Loading users...</div>
             ) : (
-              <table className="w-full text-left">
-                <thead className="bg-gray-100 border-b">
-                  <tr>
-                    <th className="px-6 py-3 font-semibold text-gray-700">Name</th>
-                    <th className="px-6 py-3 font-semibold text-gray-700">Email</th>
-                    <th className="px-6 py-3 font-semibold text-gray-700">Role</th>
-                    <th className="px-6 py-3 font-semibold text-gray-700">Actions</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {users.map((user, i) => (
-                    <tr key={user._id} className="border-b hover:bg-gray-50">
-                      <td className="px-6 py-3">{user.name}</td>
-                      <td className="px-6 py-3">{user.email}</td>
-                      <td className="px-6 py-3">
-                        <select value={user.role} disabled={user.role == "admin"} onChange={(e) => handleRoleChange(user._id, e.target.value)} className="border border-gray-300 rounded-md px-3 py-1 focus:ring focus:ring-blue-200">
-                          <option value="viewer">Viewer</option>
-                          <option value="reviewer">Reviewer</option>
-                          <option value="admin">Admin</option>
-                        </select>
-                      </td>
-                      <td className="px-6 py-3">
-                        <button disabled={user.role === "admin"} onClick={() => handleDeleteUser(user._id)} className={`bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded-lg shadow-sm transition-all ${user.role == "admin" && "cursor-not-allowed"}`}>
-                          Delete
-                        </button>
-                      </td>
+              <div className="overflow-x-auto">
+                <table className="w-full text-left min-w-[600px]">
+                  <thead className="bg-gray-100 border-b">
+                    <tr>
+                      <th className="px-6 py-3 font-semibold text-gray-700">Name</th>
+                      <th className="px-6 py-3 font-semibold text-gray-700">Email</th>
+                      <th className="px-6 py-3 font-semibold text-gray-700">Role</th>
+                      <th className="px-6 py-3 font-semibold text-gray-700">Actions</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody>
+                    {users.map((user) => (
+                      <tr key={user._id} className="border-b hover:bg-gray-50">
+                        <td className="px-6 py-3 truncate max-w-[200px]">{user.name}</td>
+                        <td className="px-6 py-3 truncate max-w-[250px]">{user.email}</td>
+                        <td className="px-6 py-3">
+                          <select value={user.role} disabled={user.role === "admin"} onChange={(e) => handleRoleChange(user._id, e.target.value)} className="border border-gray-300 rounded-md px-3 py-1 focus:ring focus:ring-blue-200">
+                            <option value="viewer">Viewer</option>
+                            <option value="reviewer">Reviewer</option>
+                            <option value="admin">Admin</option>
+                          </select>
+                        </td>
+                        <td className="px-6 py-3">
+                          <button disabled={user.role === "admin"} onClick={() => handleDeleteUser(user._id)} className={`bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded-lg shadow-sm transition-all ${user.role === "admin" && "cursor-not-allowed opacity-60"}`}>
+                            Delete
+                          </button>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             )}
           </div>
         )}

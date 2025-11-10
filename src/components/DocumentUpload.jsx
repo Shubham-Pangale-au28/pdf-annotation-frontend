@@ -72,7 +72,7 @@ function DocumentUpload({ onUpload }) {
   };
 
   return (
-    <div className="upload-card h-[70vh]">
+    <div className="upload-card h-full">
       <h2 className="upload-title">📤 Upload New Document(s)</h2>
 
       {error && <div className="upload-alert error">{error}</div>}

@@ -22,7 +22,11 @@ function Login() {
     if (result.success) {
       navigate("/dashboard");
     } else {
-      setError(result.error);
+      if (result.error) {
+        setError(result.error);
+      } else {
+        setError("Sarvice is down");
+      }
     }
     setLoading(false);
   };
