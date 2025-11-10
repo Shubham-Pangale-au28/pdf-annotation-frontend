@@ -54,7 +54,7 @@ npm install -D postcss autoprefixer tailwindcss
 If the frontend needs to call the backend at a different URL, create a `.env` in the `frontend` folder. For example:
 
 ```
-VITE_API_BASE_URL=http://localhost:5000/api
+VITE_API_BASE_URL=/api
 ```
 
 Note: Vite uses `VITE_` prefix for env variables; CRA uses `REACT_APP_` prefix.
@@ -115,4 +115,5 @@ frontend/
 - The frontend expects the backend to return populated annotation objects (with `user` and `replies.user` populated) so it can render names and avatars.
 
 ## Deployment Link
- https://pdfinity.xyz/
+
+https://pdfinity.xyz/
